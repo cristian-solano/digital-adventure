@@ -40,7 +40,7 @@ const Login = () => {
       );
 
       // Pull out user's data from the userCredential property
-      const user = userCredential.user;
+    //   const user = userCredential.user;
     } catch (err) {
       // Handle errors here
       const errorMessage = err.message;
@@ -56,6 +56,7 @@ const Login = () => {
           setErrorMessage(
             "This email address is already in use by another account."
           );
+          break;
         case "auth/invalid-email":
           setErrorMessage("This email address is invalid.");
           break;

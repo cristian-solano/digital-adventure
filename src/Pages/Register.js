@@ -73,7 +73,7 @@ const Register = () => {
                   required: true,
                   minLength: 8
               })}/>
-              <p onClick={() => handleOnSee()}><img src={eye === false ? eyes : noeye}/></p>
+              <p onClick={() => handleOnSee()}><img src={eye === false ? eyes : noeye} alt="eyes"/></p>
             </div>
             {errors.password?.type === "required" ? <div className='register-error'><img src={mistake} alt="error"/><p>Este campo no debe estar vacío</p></div> : <label htmlFor='password'>Nueva contraseña</label>}
             {errors.password?.type === "minLength" && <div className='register-error'><img src={mistake} alt="error"/><p>Minimo 8 caracteres</p></div>}
