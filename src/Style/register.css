@@ -1,0 +1,198 @@
+.register-container {
+    width: 100%;
+    height: 1080px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url('../Images/registerPhoto.jpeg');
+    background-size: cover;
+    mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0) 100%);
+    padding: 90px 60px;
+}
+
+.register-content {
+    background-color:var(--primary-color);
+    width: 500px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.register-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-image img {
+    width: 100px;
+}
+
+.register-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 15px;
+}
+
+.register-fields {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap:2px;
+}
+
+.register-fields input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #56565680;
+    padding: 15px;
+    font-size: 15px;
+    outline: none;
+    transition: 0.4s;
+    height: 35px;
+}
+
+.register-fields input:focus {
+    border-bottom:1px solid var(--secondary-color);
+}
+
+.register-fields input:focus + label {
+    font-style: italic;
+}
+
+.register-fields label {
+    font-size: 12px;
+    padding: 0 10px;
+}
+
+.register-fields-password {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap:2px;
+}
+
+.register-fields-password label {
+    font-size: 12px;
+    padding: 0 10px;
+}
+
+.register-fields-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #56565680;
+}
+
+.register-fields-content input {
+    width: 100%;
+    height: 35px;
+    border: none;
+    outline: none;
+    padding: 15px;
+    font-size: 15px;
+}
+
+
+
+.register-fields-password .register-fields-content input:focus + .register-fields-password label {
+    font-style: italic;
+}
+
+.register-fields-content p  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-fields-content p img {
+    width: 20px;
+    cursor: pointer;
+}
+
+.register-fields-button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-fields-button input {
+    width: 100%;
+    height: 35px;
+    background-color: var(--third-color);
+    font-size: 15px;
+    font-weight: bold;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    color: var(--primary-color);
+    border-radius: 10px;
+}
+
+.register-error {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+}
+
+.register-error img {
+    width: 15px;
+}
+
+.register-error p {
+    font-size: 12px;
+    color: #851e1e;
+    font-weight: bold;
+}
+
+.register-complete {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-complete {
+    font-size: 12px;
+    font-weight: bold;
+    color: #10842b;
+}
+
+.register-back {
+    width: 100%;
+    font-size: 15px;
+    text-decoration: none;
+    color: var(--secondary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-back:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 1440px) {
+    .register-container {
+        height: 800px;
+    }
+}
