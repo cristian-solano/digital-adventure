@@ -33,11 +33,11 @@ const Login = () => {
 
     try {
       // create a new user with email and password
-      const userCredential = await createUserWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
+    //   const userCredential = await createUserWithEmailAndPassword(
+    //     auth,
+    //     email,
+    //     password
+    //   );
 
       // Pull out user's data from the userCredential property
     //   const user = userCredential.user;
