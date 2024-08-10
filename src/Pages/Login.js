@@ -28,47 +28,47 @@ const Login = () => {
   };
 
   // Handle user sign up with email and password
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+//   const handleSubmit = async (e) => {
+//     e.preventDefault();
 
-    try {
-      // create a new user with email and password
-    //   const userCredential = await createUserWithEmailAndPassword(
-    //     auth,
-    //     email,
-    //     password
-    //   );
+//     try {
+//       // create a new user with email and password
+//       const userCredential = await createUserWithEmailAndPassword(
+//         auth,
+//         email,
+//         password
+//       );
 
-      // Pull out user's data from the userCredential property
-    //   const user = userCredential.user;
-    } catch (err) {
-      // Handle errors here
-      const errorMessage = err.message;
-      const errorCode = err.code;
+//       // Pull out user's data from the userCredential property
+//       const user = userCredential.user;
+//     } catch (err) {
+//       // Handle errors here
+//       const errorMessage = err.message;
+//       const errorCode = err.code;
 
-      setError(true);
+//       setError(true);
 
-      switch (errorCode) {
-        case "auth/weak-password":
-          setErrorMessage("The password is too weak.");
-          break;
-        case "auth/email-already-in-use":
-          setErrorMessage(
-            "This email address is already in use by another account."
-          );
-          break;
-        case "auth/invalid-email":
-          setErrorMessage("This email address is invalid.");
-          break;
-        case "auth/operation-not-allowed":
-          setErrorMessage("Email/password accounts are not enabled.");
-          break;
-        default:
-          setErrorMessage(errorMessage);
-          break;
-      }
-    }
-  };
+//       switch (errorCode) {
+//         case "auth/weak-password":
+//           setErrorMessage("The password is too weak.");
+//           break;
+//         case "auth/email-already-in-use":
+//           setErrorMessage(
+//             "This email address is already in use by another account."
+//           );
+//           break;
+//         case "auth/invalid-email":
+//           setErrorMessage("This email address is invalid.");
+//           break;
+//         case "auth/operation-not-allowed":
+//           setErrorMessage("Email/password accounts are not enabled.");
+//           break;
+//         default:
+//           setErrorMessage(errorMessage);
+//           break;
+//       }
+//     }
+//   };
 
 
     const handlerOnSee = () => {
@@ -86,28 +86,29 @@ const Login = () => {
             <div className='login-image'>
                 <img src={logo} alt="logo"/>
             </div>
-            <form onSubmit={handleSubmit} className='login-form'>
+            <form /* onSubmit={handleSubmit}*/ className='login-form'> 
                 <div className='login-fields'>
-                <input
-                type='email'
-                placeholder='Email'
-                onChange={handleChange}
-                name='email'
-                value={email}
-                />
-
+                    <input
+                    type='email'
+                    placeholder='Email'
+                    onChange={handleChange}
+                    name='email'
+                    value={email}
+                    />
+                    <label>Correo electronico</label>
                 </div>
                 <div className='login-fields-password'>
                     <div className='login-fields-content'>
-                    <input
-                    type='password'
-                    placeholder='Password'
-                    onChange={handleChange}
-                    name='password'
-                    value={password}
-                    />
-                    <p onClick={() => handlerOnSee()}><img src={eye === false ? noeye : eyes} alt="eyes"/></p>
+                        <input
+                        type='password'
+                        placeholder='Password'
+                        onChange={handleChange}
+                        name='password'
+                        value={password}
+                        />
+                        <p onClick={() => handlerOnSee()}><img src={eye === false ? noeye : eyes} alt="eyes"/></p>
                     </div>
+                    <label>contraseña</label>
                 </div>
                 <div className='login-fields-button'>
                     <button type='submit'>Sign Up</button>
