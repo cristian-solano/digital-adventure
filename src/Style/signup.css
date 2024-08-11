@@ -133,7 +133,7 @@
     align-items: center;
 }
 
-.register-fields-button input {
+.register-fields-button button {
     width: 100%;
     height: 35px;
     background-color: var(--third-color);

@@ -1,24 +1,24 @@
-import React, { useState } from 'react'
+import { Link, useNavigate } from "react-router-dom";
 import '../Style/login.css'
-import logo from '../Images/logoImage.png'
-import { Link } from 'react-router-dom'
-import eyes from '../Images/eye.png'
-import noeye from '../Images/noeye.png'
+import { useState } from "react";
 import {
-    createUserWithEmailAndPassword,
-    getAuth
-  } from "firebase/auth";
+  signInWithEmailAndPassword,
+  getAuth
+} from "firebase/auth";
+import logo from '../Images/logoImage.png'
+import eye from '../Images/eye.png'
+import noeye from '../Images/noeye.png'
 
 const Login = () => {
-
-    const [eye, setEye] = useState(false)
+    const navigate = useNavigate("")
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState(false);
     const [errorMessage, setErrorMessage] = useState("");
-
-  // instantiate the auth service SDK
-  const auth = getAuth();
+    const [eyes, setEyes] = useState(false)
+    
+    // Instantiate the auth service SDK
+    const auth = getAuth();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -27,98 +27,101 @@ const Login = () => {
     if (name === "password") setPassword(value);
   };
 
-  // Handle user sign up with email and password
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-//     try {
-//       // create a new user with email and password
-//       const userCredential = await createUserWithEmailAndPassword(
-//         auth,
-//         email,
-//         password
-//       );
+    try {
+      // Sign in with email and password in firebase auth service
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      navigate(`/homepage`);
+      // The signed-in user info
+      const user = userCredential.user;
+    } catch (err) {
+     // Handle Errors here.
+      const errorMessage = err.message;
+      const errorCode = err.code;
 
-//       // Pull out user's data from the userCredential property
-//       const user = userCredential.user;
-//     } catch (err) {
-//       // Handle errors here
-//       const errorMessage = err.message;
-//       const errorCode = err.code;
+      setError(true);
+      console.log(errorCode)
 
-//       setError(true);
-
-//       switch (errorCode) {
-//         case "auth/weak-password":
-//           setErrorMessage("The password is too weak.");
-//           break;
-//         case "auth/email-already-in-use":
-//           setErrorMessage(
-//             "This email address is already in use by another account."
-//           );
-//           break;
-//         case "auth/invalid-email":
-//           setErrorMessage("This email address is invalid.");
-//           break;
-//         case "auth/operation-not-allowed":
-//           setErrorMessage("Email/password accounts are not enabled.");
-//           break;
-//         default:
-//           setErrorMessage(errorMessage);
-//           break;
-//       }
-//     }
-//   };
-
-
-    const handlerOnSee = () => {
-        if(eye === false){
-            setEye(true)
-        } else {
-            setEye(false)
-        }
+      switch (errorCode) {
+        case "auth/invalid-email":
+          setErrorMessage("This email address is invalid.");
+          break;
+        case "auth/user-disabled":
+          setErrorMessage(
+            "This email address is disabled by the administrator."
+          );
+          break;
+        case "auth/user-not-found":
+          setErrorMessage("This email address is not registered.");
+          break;
+        case "auth/wrong-password":
+          setErrorMessage("The password is invalid or the user does not have a password.")
+          break;
+        default:
+          setErrorMessage(errorMessage);
+          break;
+      }
     }
+  };
 
+
+  const handleOnSee = () => {
+    if(eyes === true){
+        setEyes(false)
+    }else {
+        setEyes(true)
+    }
+  }
 
   return (
     <div className='login-container'>
-        <div className='login-content'>
-            <div className='login-image'>
-                <img src={logo} alt="logo"/>
-            </div>
-            <form /* onSubmit={handleSubmit}*/ className='login-form'> 
-                <div className='login-fields'>
-                    <input
-                    type='email'
-                    placeholder='Email'
-                    onChange={handleChange}
-                    name='email'
-                    value={email}
-                    />
-                    <label>Correo electronico</label>
-                </div>
-                <div className='login-fields-password'>
-                    <div className='login-fields-content'>
-                        <input
-                        type='password'
-                        placeholder='Password'
-                        onChange={handleChange}
-                        name='password'
-                        value={password}
-                        />
-                        <p onClick={() => handlerOnSee()}><img src={eye === false ? noeye : eyes} alt="eyes"/></p>
-                    </div>
-                    <label>contraseña</label>
-                </div>
-                <div className='login-fields-button'>
-                    <button type='submit'>Sign Up</button>
-                </div>
-                {error && <p>{errorMessage}</p>}
-            </form>
+      <div className='login-content'>
+        <div className="login-image">
+            <img src={logo} alt="logo"/>
         </div>
-        <Link to="/registro" className='login-link-reg'>¿Aún no tienes cuenta? Haz clic aquí</Link>
-    </div>
-  )
-}
 
-export default Login
+          <form className='login-form' onSubmit={handleSubmit}>
+            <div className="login-fields">
+                <input
+                type='email'
+                placeholder='Email'
+                name='email'
+                onChange={handleChange}
+                />
+                <label>Correo Electronico</label>
+            </div>
+            <div className="login-fields-password">
+                <div className="login-fields-content">
+                    <input
+                        type={eyes === true ? 'text' : 'password'}
+                        placeholder='Password'
+                        name='password'
+                        onChange={handleChange}
+                    />
+                    <p onClick={() => handleOnSee()}><img src={eyes === true ? noeye : eye}/></p>
+                </div>
+                <label>Contraseña</label>
+            </div>
+            <div className="login-fields-button">
+                <button type='submit'>Sign In</button>
+            </div>
+            {error && <p className="login-error">{errorMessage}</p>}
+            <div className='login-link'>
+                <Link className="login-link-reg" to='/signup'>Don't have an account?  Sign Up</Link>
+            </div>
+          </form>
+
+          
+       
+      </div>
+    </div>
+  );
+};
+
+export default Login;

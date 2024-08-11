@@ -83,6 +83,7 @@
 
 .login-fields-content p img {
     width: 20px;
+    cursor: pointer;
 }
 
 .login-fields input {
@@ -141,14 +142,25 @@
     cursor: pointer;
 }
 
-.login-link-reg {
+.login-link {
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.login-link-reg {
+ 
     display: flex;
     justify-content: center;
     align-items: center;
     color: var(--secondary-color);
     text-decoration: none;
     font-size: 15px;
+
+
 }
 
 .login-link-reg:hover {
