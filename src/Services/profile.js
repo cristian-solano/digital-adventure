@@ -1,4 +1,3 @@
-import React from 'react'
 import { db } from '../Auth/firebase'
 import {addDoc, collection, getDocs, where, query, setDoc, doc } from "firebase/firestore";
 const profileRef = collection(db, "profile")

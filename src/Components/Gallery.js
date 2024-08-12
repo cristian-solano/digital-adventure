@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
 import '../Style/gallery.css'
 import image from '../Images/newImage.png'
-import firebase from "firebase/compat/app";
 import "firebase/compat/storage";
 import "firebase/compat/firestore";
-import { addDoc, collection, getFirestore } from 'firebase/firestore';
+import {getFirestore } from 'firebase/firestore';
 import { app } from '../Auth/firebase';
 import { getDownloadURL, getStorage, ref, uploadBytes } from 'firebase/storage';
 import savePhoto from '../Services/gallery';
