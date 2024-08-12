@@ -10,6 +10,7 @@ import eye from '../Images/eye.png'
 import noeye from '../Images/noeye.png'
 import warning from '../Images/mistake.png'
 
+
 const SignUp = () => {
   const navigate = useNavigate()
   const [email, setEmail] = useState("");
@@ -18,8 +19,6 @@ const SignUp = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [eyes, setEyes] = useState(false)
   
-
-  // instantiate the auth service SDK
  
 
   const handleChange = (e) => {

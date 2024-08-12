@@ -256,4 +256,8 @@
     .register-fields-content input {
         font-size: 13px;
     }
+
+    .register-back {
+        font-size: 12px;
+    }
 }

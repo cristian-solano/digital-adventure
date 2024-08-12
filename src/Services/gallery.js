@@ -1,5 +1,5 @@
 import { db } from '../Auth/firebase'
-import {addDoc, collection, getDocs, updateDoc, arrayUnion} from "firebase/firestore";
+import {addDoc, collection, getDocs, updateDoc, arrayUnion, doc, increment} from "firebase/firestore";
 import { getProfile } from './profile';
 import firebase from 'firebase/compat/app';
 
@@ -49,18 +49,13 @@ export const getImages = async() => {
 
 export const updateReaction = async(galleryId, reaction) => {
     try {
-        const galleryRef = collection(db, "gallery", galleryId)
-        console.log(galleryId)
+        const galleryRef = doc(db, "gallery", galleryId);  
         await updateDoc(galleryRef, {
-            reaction_count: firebase.firestore.FieldValue.increment(1),
-            reactions: [
-                arrayUnion(reaction)
-            ]
-        })
-       
-
-
+            reaction_count: increment(1),
+            reactions: arrayUnion(reaction)  
+        });
     } catch (error) {
-        throw new Error(`An error occurred update images: ${error}`);
+        console.log(error)
+        throw new Error(`An error occurred while updating images: ${error}`);
     }
 }

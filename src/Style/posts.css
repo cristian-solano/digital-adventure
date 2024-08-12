@@ -4,7 +4,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    gap: 20px;
+    gap: 40px;
 }
 
 .post-box {
@@ -87,6 +87,7 @@
 .post-reaction-type button img {
     width: 30px;
     height: 30px;
+    cursor: pointer;
 }
 
 .post-reaction-type span {
