@@ -20,7 +20,6 @@ const Posts = () => {
         fetchPost()
     }, [])
 
-    console.log(dataPost)
 
 
   return (

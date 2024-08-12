@@ -9,6 +9,7 @@ import logo from '../Images/logoImage.png'
 import photoDefault from '../Images/photodefault.png'
 import { app } from '../Auth/firebase';
 import { getDownloadURL, getStorage, ref, uploadBytes } from 'firebase/storage';
+import Navbar from '../Components/Navbar';
 
 const Profile = () => {
 
@@ -88,6 +89,7 @@ const Profile = () => {
 
   return (
     <div className='profile-container'>
+        <Navbar/>
         <div className='profile-content'>
             <form onSubmit={handleSubmit} className='profile-form'>
                 
@@ -95,7 +97,7 @@ const Profile = () => {
                 <div className='profile-fields'>
                     <div className='profile-field-photo'>
                         <label htmlFor='photoPro'>
-                            <img src={profileInfo?.profile_photo !== "" ? profileInfo?.profile_photo : photoDefault} alt="photo"/>
+                            <img src={profileInfo?.profile_photo !== undefined ? profileInfo?.profile_photo : photoDefault} alt="photo"/>
                         </label>
                         {profileInfo?.profile_photo !== "" ? "" : <input type='text' value={nameFile !== null ? nameFile : "sin archivo"} alt="photoPicture"/>}
                         <input type="file" id="photoPro" onChange={archivoHandler} style={{display: "none"}} name="profile"  accept='.jpg, .jpeg, .png'/>

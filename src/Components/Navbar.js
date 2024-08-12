@@ -23,6 +23,8 @@ const Navbar = () => {
         </Link>
         <button onClick={() => {
             signOut(auth)
+            localStorage.clear()
+            sessionStorage.clear()
             setTimeout(() => {
                 navigate('/')
             }, 1000)
