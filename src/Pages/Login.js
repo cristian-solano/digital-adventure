@@ -91,7 +91,7 @@ const Login = () => {
             <div className="login-fields">
                 <input
                 type='email'
-                placeholder='Email'
+                placeholder='email@email.com'
                 name='email'
                 onChange={handleChange}
                 />
@@ -101,7 +101,7 @@ const Login = () => {
                 <div className="login-fields-content">
                     <input
                         type={eyes === true ? 'text' : 'password'}
-                        placeholder='Password'
+                        placeholder='contraseña'
                         name='password'
                         onChange={handleChange}
                     />
