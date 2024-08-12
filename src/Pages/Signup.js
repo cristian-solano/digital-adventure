@@ -8,6 +8,7 @@ import { auth } from '../Auth/firebase'
 import logo from '../Images/logoImage.png'
 import eye from '../Images/eye.png'
 import noeye from '../Images/noeye.png'
+import warning from '../Images/mistake.png'
 
 const SignUp = () => {
   const navigate = useNavigate()
@@ -55,17 +56,17 @@ const SignUp = () => {
 
       switch (errorCode) {
         case "auth/weak-password":
-          setErrorMessage("The password is too weak.");
+          setErrorMessage("La contraseña es demasiado débil.");
           break;
         case "auth/email-already-in-use":
           setErrorMessage(
-            "This email address is already in use by another account."
+            "Esta dirección de correo electrónico ya está siendo utilizada por otra cuenta."
           );
         case "auth/invalid-email":
-          setErrorMessage("This email address is invalid.");
+          setErrorMessage("Esta dirección de correo electrónico no es válida.");
           break;
         case "auth/operation-not-allowed":
-          setErrorMessage("Email/password accounts are not enabled.");
+          setErrorMessage("Las cuentas de correo electrónico/contraseña no están habilitadas.");
           break;
         default:
           setErrorMessage(errorMessage);
@@ -123,7 +124,11 @@ const SignUp = () => {
               <button type='submit' >Registrarse</button>
             </div>
             
-            {error && <p className="register-error">{errorMessage}</p>}
+            {error && 
+              <div className="register-error">
+                <img src={warning} alt="mistake" />
+                <p>{errorMessage}</p>
+              </div>}
           </form>
           
           <Link to='/' className="register-back">¿Ya tienes cuenta? Ingresa</Link>

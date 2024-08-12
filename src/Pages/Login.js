@@ -8,6 +8,7 @@ import {
 import logo from '../Images/logoImage.png'
 import eye from '../Images/eye.png'
 import noeye from '../Images/noeye.png'
+import warning from '../Images/mistake.png'
 
 const Login = () => {
     const navigate = useNavigate("")
@@ -52,18 +53,16 @@ const Login = () => {
 
       switch (errorCode) {
         case "auth/invalid-email":
-          setErrorMessage("This email address is invalid.");
+          setErrorMessage("Esta dirección de correo electrónico no es válida.");
           break;
         case "auth/user-disabled":
-          setErrorMessage(
-            "This email address is disabled by the administrator."
-          );
+          setErrorMessage("Esta dirección de correo electrónico está deshabilitada por el administrador.");
           break;
         case "auth/user-not-found":
-          setErrorMessage("This email address is not registered.");
+          setErrorMessage("Esta dirección de correo electrónico no está registrada.");
           break;
         case "auth/wrong-password":
-          setErrorMessage("The password is invalid or the user does not have a password.")
+          setErrorMessage("La contraseña no es válida o el usuario no tiene contraseña.")
           break;
         default:
           setErrorMessage(errorMessage);
@@ -113,7 +112,9 @@ const Login = () => {
             <div className="login-fields-button">
                 <button type='submit'>Ingresar</button>
             </div>
-            {error && <p className="login-error">{errorMessage}</p>}
+            {error && <div className="login-error">
+              <img src={warning} alt="mistake"/>
+              <p>{errorMessage}</p></div>}
             <div className='login-link'>
                 <Link className="login-link-reg" to='/signup'>¿No tienes aún una cuenta?  Registrate</Link>
             </div>
