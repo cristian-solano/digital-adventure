@@ -1,4 +1,3 @@
-
 import { db } from '../Auth/firebase'
 import {addDoc, collection, getDocs} from "firebase/firestore";
 

@@ -1,5 +1,5 @@
 import { db } from '../Auth/firebase'
-import {addDoc, collection, getDocs, where, query, setDoc, doc } from "firebase/firestore";
+import {addDoc, collection, getDocs, where, query} from "firebase/firestore";
 const profileRef = collection(db, "profile")
 
 const createProfile = async(fullName, phone, uid, email, dateBirth, photoUrl) => {

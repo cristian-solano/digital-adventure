@@ -14,7 +14,7 @@ const Posts = () => {
         setDataPost(data)
 
     console.log(dataPost)
-    }) 
+    }, []) 
 
     useEffect(() => {
         fetchPost()
