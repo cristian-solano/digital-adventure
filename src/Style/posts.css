@@ -16,6 +16,18 @@
     gap:5px
 }
 
+.post-owner {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.post-owner p {
+    font-size: 10px;
+    gap: 5px;
+}
+
 .post-box img {
     width: 500px;
     height: 400px;
@@ -34,9 +46,17 @@
 .post-reactions {
     width: 100%;
     display: flex;
+    justify-content: space-between;;
+    align-items: flex-start;
+}
+
+.post-reactions-likes {
+    width: auto;
+    display: flex;
+    flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    gap: 30px;
+    gap: 30px
 }
 
 .post-reaction-type {
