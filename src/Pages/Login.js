@@ -104,7 +104,7 @@ const Login = () => {
                         name='password'
                         onChange={handleChange}
                     />
-                    <p onClick={() => handleOnSee()}><img src={eyes === true ? noeye : eye}/></p>
+                    <p onClick={() => handleOnSee()}><img src={eyes === true ? noeye : eye} alt="eyes"/></p>
                 </div>
                 <label>Contraseña</label>
             </div>

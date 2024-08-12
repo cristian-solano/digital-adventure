@@ -97,7 +97,7 @@ const Profile = () => {
                         <label htmlFor='photoPro'>
                             <img src={profileInfo?.profile_photo !== "" ? profileInfo?.profile_photo : photoDefault} alt="photo"/>
                         </label>
-                        {profileInfo?.profile_photo !== "" ? "" : <input type='text' value={nameFile !== null ? nameFile : "sin archivo"}/>}
+                        {profileInfo?.profile_photo !== "" ? "" : <input type='text' value={nameFile !== null ? nameFile : "sin archivo"} alt="photoPicture"/>}
                         <input type="file" id="photoPro" onChange={archivoHandler} style={{display: "none"}} name="profile"  accept='.jpg, .jpeg, .png'/>
                     </div>
                     <div className='profile-field'>
