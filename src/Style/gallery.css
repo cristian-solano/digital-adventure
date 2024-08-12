@@ -90,3 +90,62 @@
     font-weight: bold;
     cursor: pointer;
 }
+
+
+@media (max-width: 768px) {
+    .gallery-form {
+        max-width: 400px;
+        padding: 15px;
+    }
+
+    .gallery-label img {
+        width: 70px;
+    }
+
+    .gallery-label p {
+        font-size: 14px;
+    }
+
+    .gallery-label:hover p {
+        font-size: 16px;
+    }
+
+    .gallery-new-image {
+        max-width: 250px;
+        max-height: 250px;
+    }
+
+    .gallery-button {
+        height: 30px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-form {
+        max-width: 300px;
+        padding: 10px;
+    }
+
+    .gallery-label img {
+        width: 50px;
+    }
+
+    .gallery-label p {
+        font-size: 12px;
+    }
+
+    .gallery-label:hover p {
+        font-size: 14px;
+    }
+
+    .gallery-new-image {
+        max-width: 200px;
+        max-height: 200px;
+    }
+
+    .gallery-button {
+        height: 28px;
+        font-size: 13px;
+    }
+}

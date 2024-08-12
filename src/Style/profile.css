@@ -158,3 +158,66 @@
     border-radius: 10px;
     mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 100%);
 }
+
+@media (max-width: 1024px) {
+    .profile-form {
+        padding: 30px;
+        max-width: 400px;
+    }
+
+    .profile-field-photo img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .profile-image img {
+        height: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-container {
+        padding: 30px;
+    }
+
+    .profile-content {
+        padding: 20px;
+    }
+
+    .profile-form {
+        padding: 20px;
+        max-width: 350px;
+    }
+
+    .profile-image img {
+        height: 400px;
+    }
+
+    .profile-logo img {
+        width: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-container {
+        padding: 20px;
+    }
+
+    .profile-form {
+        padding: 15px;
+        max-width: 300px;
+    }
+
+    .profile-field-photo img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .profile-image img {
+        height: 300px;
+    }
+
+    .profile-logo img {
+        width: 50px;
+    }
+}

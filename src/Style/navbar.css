@@ -60,3 +60,17 @@
     width: 30px;
 }
 
+
+@media (max-width: 500px) {
+    .navbar-logo img{
+        width: 70px;
+    }
+
+    .navbar-options a img {
+        width: 20px;
+    }
+
+    .navbar-options button img {
+        width: 20px;
+    }
+}

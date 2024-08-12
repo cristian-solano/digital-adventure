@@ -184,3 +184,51 @@
     color: #851e1e;
     font-weight: bold;
 }
+
+@media (max-width: 900px) {
+    .login-form {
+        width: 90%;
+        max-width: none;
+    }
+
+    .login-fields-content input,
+    .login-fields input {
+        font-size: 14px;
+    }
+
+    .login-fields-button button {
+        font-size: 14px;
+    }
+
+    .login-link-reg {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-image img {
+        width: 80px;
+    }
+
+    .login-form {
+        padding: 10px;
+    }
+
+    .login-fields-content input,
+    .login-fields input {
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    .login-fields-button button {
+        font-size: 13px;
+    }
+
+    .login-link-reg {
+        font-size: 13px;
+    }
+
+    .login-error p {
+        font-size: 11px;
+    }
+}

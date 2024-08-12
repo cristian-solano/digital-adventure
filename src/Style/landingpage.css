@@ -49,3 +49,44 @@
         height: 800px;
     }
 }
+
+@media (max-width: 900px) {
+    
+    .landing-container {
+        padding: 20px;
+        height: auto;
+
+    }
+
+    .landing-content {
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 10px;
+    }
+    
+
+    .landing-image {
+        display: none; /* Elimina el borde en pantallas más pequeñas */
+    }
+
+
+    .landing-phrase {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .landing-container {
+        padding: 10px;
+    }
+
+    .landing-image img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .landing-phrase {
+        font-size: 12px;
+        padding: 20px 0 0;
+    }
+}
