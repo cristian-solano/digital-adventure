@@ -68,7 +68,23 @@
     gap: 5px;
 }
 
+
 .post-reaction-type img {
+    width: 30px;
+    height: 30px;
+}
+
+.post-reaction-type button {
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    outline: none;
+    border: none;
+}
+
+.post-reaction-type button img {
     width: 30px;
     height: 30px;
 }

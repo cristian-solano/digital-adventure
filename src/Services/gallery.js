@@ -1,6 +1,8 @@
 import { db } from '../Auth/firebase'
-import {addDoc, collection, getDocs} from "firebase/firestore";
+import {addDoc, collection, getDocs, updateDoc, arrayUnion} from "firebase/firestore";
 import { getProfile } from './profile';
+import firebase from 'firebase/compat/app';
+
 
 
 const savePhoto = async(nombreArchivo, archivoUrl, userId) => {
@@ -38,9 +40,27 @@ export const getImages = async() => {
             images.push(imageData);
         } 
         
-        return images; // Retorna todas las imágenes
+        return images; 
     }
     catch (error) {
-        throw new Error("An error occurred fetching the images");
+        throw new Error(`An error occurred fetching the images ${error}`);
     }
 };
+
+export const updateReaction = async(galleryId, reaction) => {
+    try {
+        const galleryRef = collection(db, "gallery", galleryId)
+        console.log(galleryId)
+        await updateDoc(galleryRef, {
+            reaction_count: firebase.firestore.FieldValue.increment(1),
+            reactions: [
+                arrayUnion(reaction)
+            ]
+        })
+       
+
+
+    } catch (error) {
+        throw new Error(`An error occurred update images: ${error}`);
+    }
+}

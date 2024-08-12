@@ -40,6 +40,8 @@ const Login = () => {
       navigate(`/homepage`);
       // The signed-in user info
       const user = userCredential.user;
+      sessionStorage.setItem('id', user.uid)
+      sessionStorage.setItem('email', user.email)
     } catch (err) {
      // Handle Errors here.
       const errorMessage = err.message;

@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import '../Style/posts.css'
-import { getImages } from '../Services/gallery'
+import { getImages, updateReaction } from '../Services/gallery'
 import like from '../Images/likeBlank.png'
 import love from '../Images/loveBlank.png'
 import fire from '../Images/fire.png'
@@ -9,6 +9,7 @@ import { getProfile } from '../Services/profile'
 const Posts = () => {
 
     const [dataPost, setDataPost] = useState([])
+    const userId = sessionStorage.getItem("id")
     
 
     const fetchPost = useCallback(async() => {
@@ -16,8 +17,18 @@ const Posts = () => {
         setDataPost(data)
     }, []) 
 
+  
+
+
+    const postReactions = useCallback(async(gallery_id, reaction_type) => {
+        // const reaction = {reaction_type: reaction_type, user_id: userId}
+        // const data = await updateReaction(gallery_id, reaction)
+        // return data
+    })
+
     useEffect(() => {
         fetchPost()
+        postReactions()
     }, [])
 
 
@@ -37,10 +48,10 @@ const Posts = () => {
                     <div className='post-reactions'>
                         <div className='post-reactions-likes'>
                             <div className='post-reaction-type'>
-                                <img src={love} alt="love"/>                        
+                                <button onClick={() => postReactions(items.id,"LOVED")}><img src={love} alt="love"/> </button>                       
                             </div>
                             <div className='post-reaction-type'>
-                                <img src={like} alt="like"/>
+                                <button onClick={() => postReactions(items.id, "LIKED")}><img src={like} alt="like"/></button>
                             </div>
                         </div>
                         
