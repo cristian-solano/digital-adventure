@@ -12,7 +12,7 @@ const Posts = () => {
     const fetchPost = useCallback(async() => {
         const data = await getImages()
         setDataPost(data)
-    }) 
+    }, [dataPost]) 
 
     useEffect(() => {
         fetchPost()
