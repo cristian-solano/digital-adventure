@@ -1,0 +1,70 @@
+.post-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+}
+
+.post-box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:5px
+}
+
+.post-box img {
+    width: 500px;
+    height: 400px;
+    object-fit: cover;
+}
+
+.post-box-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.post-reactions {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;
+}
+
+.post-reaction-type {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.post-reaction-type img {
+    width: 30px;
+    height: 30px;
+}
+
+.post-reaction-type span {
+    font-size: 12px;  
+    font-weight: bold;  
+}
+
+.post-description {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.post-description p {
+    font-size: 12px;
+}

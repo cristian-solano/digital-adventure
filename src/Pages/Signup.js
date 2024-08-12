@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import {
   createUserWithEmailAndPassword
 } from "firebase/auth";
@@ -46,7 +46,6 @@ const SignUp = () => {
       navigate(`/profile`)
       sessionStorage.setItem('id', user.uid)
       sessionStorage.setItem('email', user.email)
-      
     } catch (err) {
       // Handle errors here
       const errorMessage = err.message;

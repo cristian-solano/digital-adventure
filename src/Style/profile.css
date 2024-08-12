@@ -10,6 +10,7 @@
 .profile-content {
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 20px;
@@ -17,7 +18,7 @@
 
 .profile-form {
     padding: 40px;
-    width: 100%;
+    width: 500px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -43,6 +44,41 @@
     justify-content: center;
     align-items: center;
     gap: 20px;
+}
+
+.profile-field-photo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.profile-field-photo label {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-field-photo label img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.profile-field-photo input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 15px;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .profile-field {
