@@ -14,7 +14,6 @@ const Gallery = () => {
     const userId = sessionStorage.getItem("id")
     const [archivoUrl, setArchivoUrl] = useState(null)
     const [nameFile, setNameFile] = useState(null)
-    const db = getFirestore(app)
     const storage = getStorage(app)
     const archivoHandler = async (e) => {
         const archivo = e.target.files[0];
