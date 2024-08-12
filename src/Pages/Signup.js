@@ -1,4 +1,3 @@
-
 import { Link, useNavigate } from "react-router-dom";
 import {
   createUserWithEmailAndPassword
@@ -44,7 +43,7 @@ const SignUp = () => {
       // Pull out user's data from the userCredential property
       const user = userCredential.user;
       
-      navigate(`/profile/${user.uid}`)
+      navigate(`/profile`)
       sessionStorage.setItem('id', user.uid)
       sessionStorage.setItem('email', user.email)
       
@@ -95,6 +94,9 @@ const SignUp = () => {
             <img src={logo} alt="logo"/>
           </div>
           <form className='register-form' onSubmit={handleSubmit}>
+            <div className="register-title">
+              <h3>Nueva cuenta</h3>
+            </div>
             <div className="register-fields">
               <input
                 type='email'
@@ -114,18 +116,18 @@ const SignUp = () => {
                 name='password'
                 value={password}
               />
-              <p onClick={() => handleOnSee()}><img src={eyes === false ? eye : noeye} alt="eye"/></p>
+              <p onClick={() => handleOnSee()}><img src={eyes === false ? noeye : eye} alt="eye"/></p>
             </div>
             <label>Nueva Contraseña</label>
            </div>
             <div className="register-fields-button">
-              <button type='submit' >Sign Up</button>
+              <button type='submit' >Registrarse</button>
             </div>
             
             {error && <p className="register-error">{errorMessage}</p>}
           </form>
           
-          <Link to='/' className="register-back">Already have an account? Sign In</Link>
+          <Link to='/' className="register-back">¿Ya tienes cuenta? Ingresa</Link>
           
       </div>
     </div>

@@ -45,6 +45,13 @@
     padding: 15px;
 }
 
+.register-title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .register-fields {
     width: 100%;
     display: flex;

@@ -109,11 +109,11 @@ const Login = () => {
                 <label>Contraseña</label>
             </div>
             <div className="login-fields-button">
-                <button type='submit'>Sign In</button>
+                <button type='submit'>Ingresar</button>
             </div>
             {error && <p className="login-error">{errorMessage}</p>}
             <div className='login-link'>
-                <Link className="login-link-reg" to='/signup'>Don't have an account?  Sign Up</Link>
+                <Link className="login-link-reg" to='/signup'>¿No tienes aún una cuenta?  Registrate</Link>
             </div>
           </form>
 

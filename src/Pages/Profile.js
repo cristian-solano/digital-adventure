@@ -1,12 +1,9 @@
 import React, { useCallback, useEffect, useState } from 'react'
-import { collection, getDocs, addDoc, setDoc, query, where, doc } from "firebase/firestore";
-import {
-    createUserWithEmailAndPassword
-  } from "firebase/auth";
-import {db} from '../Auth/firebase';
+import '../Style/profile.css'
 import { useNavigate, useParams } from 'react-router-dom';
-import { auth } from '../Auth/firebase'
 import createProfile, { getProfile } from '../Services/profile';
+import profileImage from '../Images/collage.jpeg'
+import logo from '../Images/logoImage.png'
 
 const Profile = () => {
 
@@ -14,7 +11,6 @@ const Profile = () => {
     const [todo, setTodo] = useState([]);
     const uid = sessionStorage.getItem("id")
     const mail = sessionStorage.getItem("email")
-    const {id} = useParams()
     const [fullName, setFullName] = useState('');
     const [country, setCountry] = useState('');
     const [profileInfo, setProfileInfo] = useState({})
@@ -72,10 +68,15 @@ const Profile = () => {
 
 
   return (
-    <div>
-            <form onSubmit={handleSubmit}>
-                
-                    <div>
+    <div className='profile-container'>
+        <div className='profile-content'>
+            <form onSubmit={handleSubmit} className='profile-form'>
+                <div className='profile-logo'>
+                    <img src={logo} alt="logo"/>
+                </div>
+                <h3>Nuevos datos</h3>
+                <div className='profile-fields'>
+                    <div className='profile-field'>
                         <input 
                             type="text" 
                             name="name" 
@@ -84,10 +85,8 @@ const Profile = () => {
                             value={profileInfo?.full_name} 
                         />
                         <label>Nombre Completo</label>
-                </div>
-               
-               
-                    <div>
+                    </div>
+                    <div className='profile-field'>
                         <input 
                             type="text" 
                             name="name" 
@@ -97,12 +96,17 @@ const Profile = () => {
                         />
                         <label>País</label>
                     </div>
-              
-                
-                <div>
-                    <button type='submit'>Guardar</button>
+                    <div className='profile-button'>
+                        <button type='submit'>Guardar</button>
+                    </div>
                 </div>
+                
             </form>
+            <div className='profile-image'>
+                <img src={profileImage} alt="picPorfile"/>
+            </div>
+        </div>
+            
         </div>
   )
 }
