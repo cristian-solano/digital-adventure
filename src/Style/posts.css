@@ -4,7 +4,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    gap: 40px;
+    gap: 20px;
 }
 
 .post-box {
@@ -48,6 +48,8 @@
     display: flex;
     justify-content: space-between;;
     align-items: flex-start;
+    border-bottom: 1px solid #56565680;
+    padding: 0 0 20px;
 }
 
 .post-reactions-likes {

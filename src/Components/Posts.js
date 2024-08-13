@@ -51,8 +51,6 @@ const Posts = () => {
 
         setReactionsState(newReactionsState);
 
-        
-       
     }, [reactionsState, userId])
 
     useEffect(() => {

@@ -1,7 +1,7 @@
 import { db } from '../Auth/firebase'
 import {addDoc, collection, getDocs, updateDoc, arrayUnion, doc, increment} from "firebase/firestore";
 import { getProfile } from './profile';
-import firebase from 'firebase/compat/app';
+
 
 
 
@@ -59,3 +59,5 @@ export const updateReaction = async(galleryId, reaction) => {
         throw new Error(`An error occurred while updating images: ${error}`);
     }
 }
+
+
