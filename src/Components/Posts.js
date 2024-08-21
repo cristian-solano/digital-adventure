@@ -30,9 +30,6 @@ const Posts = () => {
         setDataPost(dataImages);
     }, [userId]) 
 
-  
-    console.log(dataPost)
-
 
     const postReactions = useCallback(async(gallery_id, reaction_type) => {
         const newReactionsState = { ...reactionsState };
