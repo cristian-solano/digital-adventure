@@ -68,6 +68,7 @@
     height: 150px;
     object-fit: cover;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 .profile-field-photo input[type="text"] {

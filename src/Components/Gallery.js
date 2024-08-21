@@ -6,6 +6,9 @@ import "firebase/compat/firestore";
 import { app } from '../Auth/firebase';
 import { getDownloadURL, getStorage, ref, uploadBytes } from 'firebase/storage';
 import savePhoto from '../Services/gallery';
+import logo from '../Images/logoImage.png'
+import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
 
 
 const Gallery = () => {
@@ -13,6 +16,7 @@ const Gallery = () => {
     const userId = sessionStorage.getItem("id")
     const [archivoUrl, setArchivoUrl] = useState(null)
     const [nameFile, setNameFile] = useState(null)
+    const navigate = useNavigate()
     const storage = getStorage(app)
     const archivoHandler = async (e) => {
         const archivo = e.target.files[0];
@@ -25,6 +29,7 @@ const Gallery = () => {
 
     const submitHandler = async (e) => {
         e.preventDefault();
+        console.log(e)
         const nombreArchivo = e.target.nombre.value;
         if (!nombreArchivo) {
             alert("coloca un nombre");
@@ -55,7 +60,22 @@ const Gallery = () => {
             <input type="text" name="nombre" placeholder="Descripción" minLength="5"/>
         </div>
         
-        <button className='gallery-button'>Enviar</button>
+        <button className='gallery-button' onClick={() => {
+            if(nameFile !== null && archivoUrl !== null){
+                Swal.fire({
+                    imageUrl: logo,
+                    imageHeight: 200,
+                    imageWidth: 200,
+                    title: 'Nueva publicación',
+                    timer: 3000, 
+                    showConfirmButton: false
+                })
+                setTimeout(() => {
+                    navigate('/homepage')
+                }, 2000)
+                
+            }
+        }}>Enviar</button>
     </form>
   )
 }

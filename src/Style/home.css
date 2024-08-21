@@ -5,7 +5,7 @@
     justify-content: center;
     align-items: center;
     padding: 70px 0 10px;
-    background: #ffaa4942;
+    background: linear-gradient(90deg, #49ff5642, #ffaa4942);
 }
 
 .home-content {

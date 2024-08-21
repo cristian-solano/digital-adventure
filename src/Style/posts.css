@@ -97,6 +97,11 @@
     font-weight: bold;  
 }
 
+.post-reaction-type p {
+    font-size: 12px;
+    font-weight: bold;
+}
+
 .post-description {
     width: 100%;
     display: flex;

@@ -31,6 +31,7 @@ const Posts = () => {
     }, [userId]) 
 
   
+    console.log(dataPost)
 
 
     const postReactions = useCallback(async(gallery_id, reaction_type) => {
@@ -75,10 +76,12 @@ const Posts = () => {
                     <div className='post-reactions'>
                         <div className='post-reactions-likes'>
                             <div className='post-reaction-type'>
-                                <button type='button' onClick={() => postReactions(items.id,"LOVED")}><img id={`love-${items.id}`} src={reactionsState[items.id]?.loved ? loveColor : love} alt="love"/> </button>                       
+                                <button type='button' onClick={() => postReactions(items.id,"LOVED")}><img id={`love-${items.id}`} src={reactionsState[items.id]?.loved ? loveColor : love} alt="love"/> </button>  
+                                <p>{items.reactions && items.reactions.filter(item => item.reaction_type === "LOVED").length}</p>                     
                             </div>
                             <div className='post-reaction-type'>
                                 <button type='button' onClick={() => postReactions(items.id, "LIKED")}><img id={`like-${items.id}`} src={reactionsState[items.id]?.liked ? likeColor : like} alt="like"/></button>
+                                <p>{items.reactions && items.reactions.filter(item => item.reaction_type === "LIKED").length}</p>
                             </div>
                         </div>
                         

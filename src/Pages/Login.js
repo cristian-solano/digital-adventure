@@ -9,6 +9,7 @@ import logo from '../Images/logoImage.png'
 import eye from '../Images/eye.png'
 import noeye from '../Images/noeye.png'
 import warning from '../Images/mistake.png'
+import Swal from "sweetalert2";
 
 const Login = () => {
     const navigate = useNavigate("")
@@ -50,6 +51,7 @@ const Login = () => {
 
       setError(true);
       console.log(errorCode)
+      
 
       switch (errorCode) {
         case "auth/invalid-email":
@@ -110,7 +112,19 @@ const Login = () => {
                 <label>Contraseña</label>
             </div>
             <div className="login-fields-button">
-                <button type='submit'>Ingresar</button>
+                <button type='submit' onClick={() => {
+                  if(!errorMessage !== true) {
+                    Swal.fire({
+                      title: "Bienvenido a Image",
+                      text: "Credenciales correctas",
+                      imageUrl: logo,
+                      timer: 3000,
+                      imageHeight: 200,
+                      imageWidth: 200, 
+                      showConfirmButton: false
+                    })
+                  }
+                }}>Ingresar</button>
             </div>
             {error && <div className="login-error">
               <img src={warning} alt="mistake"/>
